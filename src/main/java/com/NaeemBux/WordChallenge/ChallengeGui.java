@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class challengeGui extends JFrame implements ActionListener
+public class ChallengeGui extends JFrame implements ActionListener
 {
 
     /*TextFields*/
@@ -29,7 +29,7 @@ public class challengeGui extends JFrame implements ActionListener
     private JLabel difficultyLbl = new JLabel("Difficulty:      Normal");
 
 
-    public challengeGui(String title){
+    public ChallengeGui(String title){
 
         super(title);
 

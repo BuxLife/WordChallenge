@@ -1,7 +1,7 @@
 package com.NaeemBux.WordChallenge;
 
 
-public interface wordGeneratorInterface
+public interface GeneratorInterface
 {
     public void generate();
 

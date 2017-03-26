@@ -3,6 +3,6 @@ package com.NaeemBux.WordChallenge;
 
 public interface GeneratorInterface
 {
-    public void generate();
+    public void generate(int difficulty);
 
 }

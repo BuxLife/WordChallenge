@@ -4,12 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ChallengeGui extends JFrame implements ActionListener
 {
 
     /*TextFields*/
     private JTextField wordTxt = new JTextField(30);
+    private JTextField answerTxt = new JTextField(30);
     private JTextArea helpTxt = new JTextArea(8, 30);
 
     /*Panels*/
@@ -18,7 +21,7 @@ public class ChallengeGui extends JFrame implements ActionListener
 
     /*Buttons*/
     private JButton newGameBtn = new JButton("New Game");
-    private JButton hintBtn = new JButton("Hint?");
+    private JButton hintBtn = new JButton("Hint");
     private JButton difficultyBtn = new JButton("Change Difficulty");
     private JButton helpBtn = new JButton("Help");
     private JButton scoreBtn = new JButton("High Scores");
@@ -82,10 +85,13 @@ public class ChallengeGui extends JFrame implements ActionListener
         textPanel.setBorder(BorderFactory.createTitledBorder("War of the Word"));
         textPanel.setLayout(new GridBagLayout());
         cpc.gridx = 0;
+        cpc.gridy = 1;
+        textPanel.add(answerTxt, cpc);
+        cpc.gridx = 0;
         cpc.gridy = 2;
         textPanel.add(wordTxt, cpc);
         cpc.gridx = 0;
-        cpc.gridy = 1;
+        cpc.gridy = 3;
         textPanel.add(helpTxt);
 
         wordTxt.setEditable(false);
@@ -104,6 +110,16 @@ public class ChallengeGui extends JFrame implements ActionListener
 
     public void actionPerformed(ActionEvent e)
     {
+        if (e.getSource() == newGameBtn)
+        {
+            WordGenerator words = new WordGenerator();
+            WordChallenge newChallenge = new WordChallenge();
+            Map wordList = new HashMap();
+            words.generate(2);
+            wordList = words.getWords();
+            wordTxt.setText((String) wordList.get("easyWord").toString());
+
+        }
         if (e.getSource() == exitBtn)
         {
             System.exit(0);

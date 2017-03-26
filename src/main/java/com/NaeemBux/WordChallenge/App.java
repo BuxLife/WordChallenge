@@ -3,7 +3,7 @@ package com.NaeemBux.WordChallenge;
 import javax.swing.*;
 
 /**
- * Hello world!
+ * Developed by Naeem Bux
  *
  */
 public class App 
@@ -15,7 +15,7 @@ public class App
 
             public void run() {
 
-                challengeGui wordGame = new challengeGui("Battle of Words");
+                ChallengeGui wordGame = new ChallengeGui("Battle of Words");
                 JFrame.setDefaultLookAndFeelDecorated(true);
                 wordGame.setSize(550, 250);
                 wordGame.setResizable(false);
